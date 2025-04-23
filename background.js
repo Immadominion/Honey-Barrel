@@ -2,13 +2,11 @@
 const BAXUS_API_URL = 'https://services.baxus.co/api/search/listings';
 // Change PAGE_SIZE to 2000 to match the desired first fetch
 const PAGE_SIZE = 2000;
-// Try lowering the threshold for testing:
 // const SIMILARITY_THRESHOLD = 0.6;
-const SIMILARITY_THRESHOLD = 0.4; // Lowered for testing
+const SIMILARITY_THRESHOLD = 0.6;
 
-// --- Ensure these helper functions are present ---
+
 // Function to normalize bottle names for better matching
-// --- Ensure this function is the complete version (including common word removal) ---
 function normalizeBottleName(name) {
   if (!name) return '';
   return name.toLowerCase()
@@ -62,13 +60,13 @@ async function searchBaxusListings(query, maxPages = 2000) { // 'query' is now t
     let currentPage = 0;
     let hasMoreResults = true;
 
-    // The loop structure remains the same.
+
     // With PAGE_SIZE = 2000, the first iteration (currentPage=0)
     // will fetch from=0, size=2000.
     // Subsequent iterations will fetch from=2000, size=2000, etc.
     while (hasMoreResults && currentPage < maxPages) {
       const from = currentPage * PAGE_SIZE; // Now calculates 0, 2000, 4000...
-      console.log(`[Honey Barrel BG] Fetching page ${currentPage + 1} (from: ${from}, size: ${PAGE_SIZE})`); // Log size
+      // console.log(`[Honey Barrel BG] Fetching page ${currentPage + 1} (from: ${from}, size: ${PAGE_SIZE})`); // Log size
 
       try {
         // Log the exact URL being fetched
@@ -126,9 +124,7 @@ async function searchBaxusListings(query, maxPages = 2000) { // 'query' is now t
             if (resultsArray.length > 0) {
                 console.log(`[Honey Barrel BG] First result sample:`, JSON.stringify(resultsArray[0], null, 2));
                 
-                resultsArray.forEach(item => {
-                  console.log(`[Honey Barrel BG] API Result Name: "${item._source?.name}"`);
-                });
+                
             const pageMatches = resultsArray
                 .map(item => {
                   // Calculate similarity for each item before filtering

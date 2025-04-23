@@ -12,14 +12,17 @@ const RETAIL_SITES = {
       vintageSelector: '.vintage, .wine-vintage',
       varietalSelector: '.varietal, .wine-type, .grape-variety'
     },
-    'totalwine.com': {
-      titleSelector: 'h1, .product-name, .pdp-name, productTitle__28e21c67 ',
-      priceSelector: '.price, .pdp-price, .product-price, .priceColumn__0e967ace',
-      brandSelector: '.product-brand, .pdp-brand, .brand, [data-test="brand-name"], .odtLink__a37116a7',
-      regionSelector: '.product-region, .pdp-region, .region, [data-test="product-region"]',
-      imageSelector: '.product-image img, picture, .pdp-image img, ProductImagestyled__StyledPicture-shared-packages__x66sdz-0',
-      vintageSelector: '.vintage, [data-test="vintage"]',
-      varietalSelector: '.varietal, .wine-type, [data-test="varietal"]'
+    'caskers.com': {
+      titleSelector: '.product-title, .product-name, h1',
+      priceSelector: '.product-price, .price',
+      brandSelector: '.product-brand, .brand',
+      regionSelector: '.product-region, .region',
+      imageSelector: '.product-image img'
+    },
+
+    'baxus.co': {
+      titleSelector: 'h1',
+      priceSelector: '.xsm\\:numbers-medium',
     },
     // Whisky retailers
     'whiskyexchange.com': {
@@ -57,32 +60,8 @@ const RETAIL_SITES = {
       regionSelector: '.wine-region, .region-name, [data-testid="wine-region"]',
       imageSelector: '.wine-image img, .bottle-image img'
     },
-    'whiskyadvocate.com': {
-      titleSelector: '.whisky-name, .product-name, h1',
-      priceSelector: '.whisky-price, .price, .product-price',
-      brandSelector: '.distillery-name, .brand, .producer',
-      regionSelector: '.whisky-region, .region',
-      imageSelector: '.whisky-image img, .bottle-image'
-    },
-    'whiskybase.com': {
-      titleSelector: '.bottle-name, .product-name, h1',
-      priceSelector: '.price, .product-price, .bottle-price',
-      brandSelector: '.distillery, .brand, .producer',
-      regionSelector: '.region, .country',
-      imageSelector: '.bottle-image img, .product-image img'
-    },
-    'caskers.com': {
-      titleSelector: '.product-title, .product-name, h1',
-      priceSelector: '.product-price, .price',
-      brandSelector: '.product-brand, .brand',
-      regionSelector: '.product-region, .region',
-      imageSelector: '.product-image img'
-    },
-
-    'baxus.co': {
-      titleSelector: 'h1',
-      priceSelector: '.xsm\\:numbers-medium',
-    },
+    
+    
     // Add more retail sites as needed
   };
   
@@ -365,7 +344,7 @@ const RETAIL_SITES = {
             <polyline points="8 15 12 19 16 15"></polyline>
             <line x1="12" y1="19" x2="12" y2="5"></line>
           </svg>
-          Better price found here!
+          Check this out !
         `;
       }
       

@@ -21,19 +21,30 @@ Finding the best deal for a bottle often means manually searching multiple place
 *   **Real-time Price Comparison:** Fetches current listings from the BAXUS marketplace.
 
 *   **On-Page Overlay:** Discreetly shows you the BAXUS price comparison right on the product page.
-    *   *(Screenshot Placeholder: Show the overlay appearing on a retail site product page)*
+    *   ![Screenshot of Price comparison overlay](screenshots/Screenshot-2025-04-23-144303.jpg)
 *   **Detailed Popup View:** Click the extension icon for more detailed information about matched bottles on BAXUS.
-    *   *(Screenshot Placeholder: Show the extension popup with match details)*
+    *   ![Screenshot of extension popup](screenshots/Screenshot-2025-04-23-144156.jpg)
 *   **Smart Matching:** Uses a clever algorithm to match bottle names, even if the spelling or description isn't exactly the same.
+
+## Bottleneck (Issues that arose but were resolved)
+
+1. **Finding the bottle on websites**: Most websites i came across while starting out didn't have the type of whiskeys and wines on baxus so i had to do a long search to find one
+
+2. **Getting the elements for the images, prices and names**: this was relatively hard. most websites content are dynamic, so i think a future approach will be the use of AI to index the page
+
+3. **Finding the item on baxus API**: I didnt find any suitable way to query the baxus api with a keyword e.g (https://services.baxus.co/api/search/listings?from=0&size=20&listed=true&q=whiskey), so i had to use filtering instead and fuzzy search and calculating similarity (Levenshtein distance based) seen in background.js
 
 ## How It Works
 
 1.  **Install the Extension:** Follow the simple steps in the "Installation Guide" below.
-2.  **Browse Supported Sites:** Visit a product page on a supported retail website (like `wine.com` or `totalwine.com`).
+2.  **Browse Supported Sites:** Visit a product page on a supported retail website (like `wine.com` or `caskers.com`).
 3.  **Price Comparison:** If Honey Barrel recognizes the bottle, a small overlay will appear, showing you the price comparison with BAXUS listings.
-    *   *(Screenshot Placeholder: Repeat or use a different example of the overlay)*
+    *   ![Screenshot of Price comparison overlay](screenshots/Screenshot-2025-04-23-144303.jpg)
 4.  **Get More Details (Optional):** Click the Honey Barrel extension icon in your Chrome toolbar to see more detailed information about the matches found on BAXUS.
-    *   *(Screenshot Placeholder: Repeat or use a different example of the popup)*
+    *   ![Screenshot of extension popup](screenshots/Screenshot-2025-04-23-144156.jpg)
+
+5.  **If item/bottle not found:** If the bottle is not found on the baxus marketplace it returns a nice message stating that
+    *   ![Screenshot of extension popup](screenshots/Screenshot-2025-04-23-152208.jpg)
 
 ## 🛠️ Installation Guide (For Chrome)
 
@@ -46,22 +57,25 @@ Since this is currently under development, you'll need to load it manually. It's
     *   Type `chrome://extensions/` into the address bar and press Enter.
 3.  **Enable Developer Mode:**
     *   Look for the "Developer mode" toggle switch, usually in the top-right corner of the Extensions page, and turn it **ON**.
-    *   *(Screenshot Placeholder: Show the Chrome Extensions page with Developer Mode highlighted)*
+    *   ![Screenshot of Developer mode toggle](screenshots/Screenshot-2025-04-23-222220.jpg)
 4.  **Load the Extension:**
     *   Click the "Load unpacked" button that appears (usually on the top-left).
-    *   *(Screenshot Placeholder: Show the "Load unpacked" button)*
+    *   ![Screenshot of Load Unpacked Button](screenshots/Screenshot-2025-04-23-153509.jpg)
     *   Navigate to the folder where you saved the Honey Barrel project files (the folder containing `manifest.json`, `background.js`, etc.).
     *   Select the main project folder (e.g., `Honey-Barrel`) and click "Select Folder".
 5.  **Done!**
     *   The Honey Barrel extension should now appear in your list of extensions and its icon (🍯) should be visible in your Chrome toolbar (you might need to click the puzzle piece icon to pin it).
-    *   *(Screenshot Placeholder: Show the Honey Barrel extension card on the Extensions page and the icon in the toolbar)*
+    *   ![Screenshot of Honey Barrel extension](screenshots/Screenshot-2025-04-23-222927.jpg)
+
+
 
 ## ✅ Supported Retail Websites
 
 Currently, Honey Barrel works best on:
 
 *   `wine.com`
-*   `totalwine.com`
+*   `caskers.com`
+* all currently supported websites are in the content.js though website content are prone to change (baxus is also supported too)
 
 (Support for more sites may be added in the future!)
 
@@ -80,5 +94,3 @@ Curious how it works under the hood?
 *   Honey Barrel is an independent tool and is not affiliated with BAXUS or any retail websites.
 
 ---
-
-Happy Bargain Hunting! 🥃🍷
