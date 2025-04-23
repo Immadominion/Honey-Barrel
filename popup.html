@@ -1,0 +1,391 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Honey Barrel</title>
+  <style>
+    :root {
+      --primary-color: #8b4513;
+      --primary-light: #a0522d;
+      --accent-color: #f0c14b;
+      --text-color: #333;
+      --bg-color: #fff;
+      --secondary-bg: #f9f6f2;
+      --border-color: #e0d6ca;
+      --success-color: #28a745;
+      --savings-color: #157347;
+      --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      --radius: 12px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      width: 380px;
+      padding: 16px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: var(--text-color);
+      background: var(--bg-color);
+      line-height: 1.5;
+    }
+
+    .header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .logo {
+      font-size: 28px;
+      margin-right: 12px;
+      transform-origin: center;
+      animation: gentle-tilt 3s ease-in-out infinite alternate;
+    }
+
+    @keyframes gentle-tilt {
+      0% { transform: rotate(-5deg); }
+      100% { transform: rotate(5deg); }
+    }
+
+    .title {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .title-main {
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--primary-color);
+    }
+
+    .title-sub {
+      font-size: 12px;
+      color: #888;
+    }
+
+    .loading-container {
+      position: relative;
+      height: 3px;
+      background-color: var(--secondary-bg);
+      margin-bottom: 16px;
+      border-radius: 3px;
+      overflow: hidden;
+    }
+
+    .loading-bar {
+      position: absolute;
+      height: 100%;
+      width: 30%;
+      background: linear-gradient(90deg, transparent, var(--accent-color), transparent);
+      animation: loading-animation 1.5s infinite;
+    }
+
+    @keyframes loading-animation {
+      0% { left: -30%; }
+      100% { left: 100%; }
+    }
+
+    .status {
+      padding: 14px;
+      border-radius: var(--radius);
+      background: var(--secondary-bg);
+      margin-bottom: 16px;
+      font-size: 14px;
+      position: relative;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+    }
+
+    .status::before {
+      content: "";
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      background-color: #ccc;
+      border-radius: 50%;
+      margin-right: 10px;
+    }
+
+    .status.loading::before {
+      background-color: var(--accent-color);
+      animation: pulse 1.5s infinite;
+    }
+
+    .status.success::before {
+      background-color: var(--success-color);
+    }
+
+    .status.error::before {
+      background-color: #dc3545;
+    }
+
+    @keyframes pulse {
+      0% { opacity: 0.4; transform: scale(0.8); }
+      50% { opacity: 1; transform: scale(1.2); }
+      100% { opacity: 0.4; transform: scale(0.8); }
+    }
+
+    .matches {
+      max-height: 400px;
+      overflow-y: auto;
+      padding-right: 5px;
+    }
+
+    .matches::-webkit-scrollbar {
+      width: 5px;
+    }
+
+    .matches::-webkit-scrollbar-thumb {
+      background-color: var(--border-color);
+      border-radius: 10px;
+    }
+
+    .match-item {
+      padding: 16px;
+      border-radius: var(--radius);
+      background: var(--secondary-bg);
+      margin-bottom: 14px;
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      animation: appear 0.3s ease-out;
+      position: relative;
+      overflow: hidden;
+    }
+
+    @keyframes appear {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .match-item:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+    }
+
+    .match-header {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 12px;
+    }
+
+    .match-image {
+      width: 70px;
+      height: 70px;
+      border-radius: 8px;
+      object-fit: cover;
+      margin-right: 12px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    .match-details {
+      flex: 1;
+    }
+
+    .match-name {
+      font-weight: 600;
+      margin-bottom: 4px;
+      color: var(--primary-color);
+      line-height: 1.3;
+    }
+
+    .match-type {
+      font-size: 12px;
+      color: #777;
+      margin-bottom: 4px;
+    }
+
+    .match-region {
+      font-size: 12px;
+      color: #777;
+      display: flex;
+      align-items: center;
+    }
+
+    .match-region svg {
+      width: 12px;
+      height: 12px;
+      margin-right: 4px;
+    }
+
+    .price-compare {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+      font-size: 14px;
+    }
+
+    .price-compare-item {
+      padding: 8px 10px;
+      background: var(--bg-color);
+      border-radius: 6px;
+      border: 1px solid var(--border-color);
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.2s ease;
+    }
+
+    .price-compare-item:hover {
+      transform: translateY(-2px);
+    }
+
+    .price-compare-item:first-child {
+      margin-right: 8px;
+    }
+
+    .price-label {
+      font-size: 11px;
+      color: #888;
+      margin-bottom: 2px;
+    }
+
+    .price-value {
+      font-weight: 600;
+      color: var(--text-color);
+    }
+
+    .savings {
+      color: var(--savings-color);
+      font-weight: 600;
+      margin-bottom: 12px;
+      font-size: 15px;
+      padding: 6px 10px;
+      background-color: rgba(40, 167, 69, 0.1);
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+    }
+
+    .savings svg {
+      margin-right: 6px;
+    }
+
+    .view-btn {
+      display: block;
+      background: var(--primary-color);
+      color: white;
+      text-decoration: none;
+      padding: 10px 14px;
+      border-radius: 6px;
+      text-align: center;
+      font-weight: 500;
+      transition: background 0.2s ease, transform 0.1s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .view-btn:hover {
+      background: var(--primary-light);
+      transform: translateY(-1px);
+    }
+
+    .view-btn:active {
+      transform: translateY(1px);
+    }
+
+    .view-btn svg {
+      margin-left: 8px;
+      transition: transform 0.2s ease;
+    }
+
+    .view-btn:hover svg {
+      transform: translateX(2px);
+    }
+
+    .no-matches {
+      text-align: center;
+      color: #666;
+      padding: 30px 20px;
+      background: var(--secondary-bg);
+      border-radius: var(--radius);
+      border: 1px dashed var(--border-color);
+      animation: appear 0.3s ease-out;
+    }
+
+    .no-matches svg {
+      width: 40px;
+      height: 40px;
+      margin-bottom: 15px;
+      color: #888;
+    }
+
+    .footer {
+      margin-top: 16px;
+      text-align: center;
+      font-size: 12px;
+      color: #888;
+      padding-top: 12px;
+      border-top: 1px solid var(--border-color);
+    }
+
+    .blurhash-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0.06;
+      z-index: 0;
+      border-radius: var(--radius);
+    }
+
+    .match-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .spirit-badge {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 11px;
+      background: rgba(255, 255, 255, 0.85);
+      padding: 4px 8px;
+      border-radius: 50px;
+      color: var(--primary-color);
+      font-weight: 500;
+      box-shadow: var(--shadow);
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="logo">🍷</div>
+    <div class="title">
+      <div class="title-main">Honey Barrel</div>
+      <div class="title-sub">Premium bottle price comparison</div>
+    </div>
+  </div>
+
+  <div class="loading-container">
+    <div class="loading-bar"></div>
+  </div>
+
+  <div class="status loading">
+    Searching for bottle matches...
+  </div>
+
+  <div class="matches">
+    <!-- Matches will be populated dynamically -->
+  </div>
+
+  <div class="footer">
+    Powered by BAXUS marketplace
+  </div>
+  <script src="fuse.min.js"></script>
+  <script src="popup.js"></script>
+
+</body>
+</html>
