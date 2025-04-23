@@ -1,21 +1,25 @@
-# Honey Barrel: Find the Best Price for Your Bottle 🍯💰
+# Honey Barrel: Find the Best Price for Your Bottle using Baxus
 
-Ever wondered if that bottle of whisky or wine you're looking at online is *really* a good deal? Honey Barrel is a simple Chrome extension designed to help you quickly compare prices between popular online liquor retailers and the BAXUS marketplace, potentially saving you money!
+Ever wondered if that bottle of whisky or wine you're looking at online is *really* a good deal?
+Honey Barrel is a simple Chrome extension designed to help you quickly compare prices between popular online liquor retailers and the BAXUS marketplace, potentially saving you money!
 
-Think of it as your personal price-checking assistant for fine spirits and wines.
 
 ## 🤔 Honey Barrel (Use Case)?
 
-Shopping for specific bottles online can be time-consuming. Prices vary across different websites, and finding the best deal often means manually searching multiple places. Honey Barrel aims to simplify this by:
+Finding the best deal for a bottle often means manually searching multiple places. Honey Barrel aims to simplify this by:
 
-*   **Automating Price Checks:** Automatically looks up bottles you view on supported retail sites.
-*   **Comparing with BAXUS:** Shows you the current listing prices on the BAXUS marketplace side-by-side.
-*   **Saving You Time & Money:** Helps you spot potential savings without leaving the retailer's page.
+1   **Automating Price Checks:** Automatically looks up bottles you view on supported retail sites.
 
-##  Key Features
+2   **Comparing with BAXUS:** Shows you the current listing prices on the BAXUS marketplace side-by-side.
+
+3   **Saving You Time & Money:** Helps you spot potential savings without leaving the retailer's page.
+
+##  Key Features Implemented
 
 *   **Automatic Bottle Detection:** Identifies whisky and wine bottles as you browse supported sites.
+
 *   **Real-time Price Comparison:** Fetches current listings from the BAXUS marketplace.
+
 *   **On-Page Overlay:** Discreetly shows you the BAXUS price comparison right on the product page.
     *   *(Screenshot Placeholder: Show the overlay appearing on a retail site product page)*
 *   **Detailed Popup View:** Click the extension icon for more detailed information about matched bottles on BAXUS.
