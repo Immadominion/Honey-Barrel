@@ -21,9 +21,9 @@ Finding the best deal for a bottle often means manually searching multiple place
 *   **Real-time Price Comparison:** Fetches current listings from the BAXUS marketplace.
 
 *   **On-Page Overlay:** Discreetly shows you the BAXUS price comparison right on the product page.
-    *   ![Screenshot of Price comparison overlay](screenshots/Screenshot-2025-04-23-144303.jpg)
+    *   ![Screenshot of Price comparison overlay](screenshots/Screenshot-2025-04-24-135645.jpg)
 *   **Detailed Popup View:** Click the extension icon for more detailed information about matched bottles on BAXUS.
-    *   ![Screenshot of extension popup](screenshots/Screenshot-2025-04-23-144156.jpg)
+    *   ![Screenshot of extension popup](screenshots/Screenshot-2025-04-24-135808.jpg)
 *   **Smart Matching:** Uses a clever algorithm to match bottle names, even if the spelling or description isn't exactly the same.
 
 ## Bottleneck (Issues that arose but were resolved)
@@ -40,6 +40,8 @@ Finding the best deal for a bottle often means manually searching multiple place
 2.  **Browse Supported Sites:** Visit a product page on a supported retail website (like `wine.com` or `caskers.com`).
 3.  **Price Comparison:** If Honey Barrel recognizes the bottle, a small overlay will appear, showing you the price comparison with BAXUS listings.
     *   ![Screenshot of Price comparison overlay](screenshots/Screenshot-2025-04-23-144303.jpg)
+    *another example on whiskey.auction*
+    ![Screenshot of Price comparison overlay](screenshots/Screenshot-2025-04-24-141508.jpg)
 4.  **Get More Details (Optional):** Click the Honey Barrel extension icon in your Chrome toolbar to see more detailed information about the matches found on BAXUS.
     *   ![Screenshot of extension popup](screenshots/Screenshot-2025-04-23-144156.jpg)
 
