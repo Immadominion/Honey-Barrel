@@ -12,6 +12,27 @@ const RETAIL_SITES = {
       vintageSelector: '.vintage, .wine-vintage',
       varietalSelector: '.varietal, .wine-type, .grape-variety'
     },
+    'spiritory.com': {
+      titleSelector: 'h1, .product-name, .text-breadcrumbs-active',
+      priceSelector: '.tw-pt-3.tw-text-3xl.tw-font-medium.tw-text-text, .price',
+      brandSelector: '.product-brand, .brand, .rte > p:last-child',
+      regionSelector: 'li:nth-of-type(4) span:nth-of-type(2), .region',
+      imageSelector: '.tw-pt-4 img'
+    },
+    'caskcartel.com': {
+      titleSelector: '.product-title, .product-name, h3',
+      priceSelector: '.price__current, .price',
+      brandSelector: '.product-brand, .brand, .rte > p:last-child',
+      regionSelector: '.product-region, .region',
+      imageSelector: '.product-image'
+    },
+    'whisky.auction': {
+      titleSelector: '.lotName1 .line-1, .product-title .lotName1',
+      priceSelector: '.conversion-value, .winningBid',
+      brandSelector: '.metawrap p:nth-of-type(1)',
+      regionSelector: '.metawrap p:nth-of-type(3), .region',
+      imageSelector: '.product-image-main img'
+    },
     'caskers.com': {
       titleSelector: '.product-title, .product-name, h1',
       priceSelector: '.product-price, .price',
@@ -24,35 +45,7 @@ const RETAIL_SITES = {
       titleSelector: 'h1',
       priceSelector: '.xsm\\:numbers-medium',
     },
-    // Whisky retailers
-    'whiskyexchange.com': {
-      titleSelector: '.product-main__name, h1',
-      priceSelector: '.product-action__price, .price',
-      brandSelector: '.product-main__subtitle, .brand-name',
-      regionSelector: '.product-main__meta-value, .region',
-      imageSelector: '.product-main__image img, .bottle-image',
-      ageSelector: '.product-main__meta-value, .age',
-      strengthSelector: '.product-main__meta-value, .strength'
-    },
-    'masterofmalt.com': {
-      titleSelector: '.product-title, h1',
-      priceSelector: '.product-price, .price',
-      brandSelector: '.product-brand, .brand',
-      regionSelector: '.product-region, .region',
-      imageSelector: '.product-image img',
-      ageSelector: '.product-age, .age',
-      strengthSelector: '.product-strength, .strength'
-    },
-    'finedrams.com': {
-      titleSelector: '.product-title, h1',
-      priceSelector: '.product-price, .price',
-      brandSelector: '.product-brand, .brand',
-      regionSelector: '.product-region, .region',
-      imageSelector: '.product-image img',
-      ageSelector: '.product-age, .age',
-      strengthSelector: '.product-strength, .strength'
-    },
-    
+   
     'vivino.com': {
       titleSelector: '.wine-name, .wine-title, h1, .wineHeadline-module__wineHeadline--32Ety',
       priceSelector: '.price, .wine-price, .purchaseAvailabilityPPC__amount--2_4GT',

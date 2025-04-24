@@ -73,7 +73,10 @@ Since this is currently under development, you'll need to load it manually. It's
 
 Currently, Honey Barrel works best on:
 
+*   `spiritory.com`
 *   `wine.com`
+*   `caskcartel.com`
+*   `whiskey.auction`
 *   `caskers.com`
 * all currently supported websites are in the content.js though website content are prone to change (baxus is also supported too)
 

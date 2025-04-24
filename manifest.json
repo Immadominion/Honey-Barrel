@@ -30,7 +30,10 @@
           "*://*.whiskybase.com/*",
           "*://*.caskers.com/*",
           "*://*.reservebar.com/*",
-          "*://*.baxus.co/*"
+          "*://*.baxus.co/*",
+          "*://*.caskcartel.com/*",
+          "*://*.spiritory.com/*",
+          "*://*.whisky.auction/*"
         ],
         "js": ["fuse.min.js", "content.js"],
         "run_at": "document_idle"
