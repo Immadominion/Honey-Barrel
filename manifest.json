@@ -33,7 +33,8 @@
           "*://*.baxus.co/*",
           "*://*.caskcartel.com/*",
           "*://*.spiritory.com/*",
-          "*://*.whisky.auction/*"
+          "*://*.whisky.auction/*",
+          "*://*.whisky-online.com/*"
         ],
         "js": ["fuse.min.js", "content.js"],
         "run_at": "document_idle"

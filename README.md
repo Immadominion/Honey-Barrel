@@ -80,6 +80,8 @@ Currently, Honey Barrel works best on:
 *   `caskcartel.com`
 *   `whiskey.auction`
 *   `caskers.com`
+*   `whisky-online.com`
+*   `baxus.co`
 * all currently supported websites are in the content.js though website content are prone to change (baxus.co is also supported too)
 
 (Support for more sites may be added in the future!)

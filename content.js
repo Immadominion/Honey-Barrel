@@ -33,6 +33,13 @@ const RETAIL_SITES = {
       regionSelector: '.metawrap p:nth-of-type(3), .region',
       imageSelector: '.product-image-main img'
     },
+    'whisky-online.com': {
+      titleSelector: '.h3.m-zero, h1',
+      priceSelector: '.price-item, .price-item--last',
+      brandSelector: '.metawrap p:nth-of-type(1)',
+      regionSelector: '.metawrap p:nth-of-type(3), .region',
+      imageSelector: '.img-product-details img'
+    },
     'caskers.com': {
       titleSelector: '.product-title, .product-name, h1',
       priceSelector: '.product-price, .price',
